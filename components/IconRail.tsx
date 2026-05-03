@@ -11,7 +11,7 @@ export default function IconRail() {
   ];
 
   return (
-    <div className="w-[72px] h-full flex flex-col items-center py-6 bg-white border-r border-border-soft shrink-0">
+    <div className="w-[72px] h-full flex flex-col items-center py-6 bg-white dark:bg-dark-sidebar border-r border-border-soft dark:border-dark-border shrink-0 transition-colors duration-300">
       {/* Top Logo PlaceHolder */}
       <div className="w-10 h-10 rounded-full bg-primary-green flex items-center justify-center text-white font-bold text-xl mb-auto cursor-pointer shadow-sm">
         Q
@@ -26,7 +26,7 @@ export default function IconRail() {
               ${
                 item.active
                   ? 'bg-primary-green/10 text-primary-green'
-                  : 'text-text-muted hover:bg-gray-100/80 hover:text-text-dark'
+                  : 'text-text-muted hover:bg-gray-100/80 dark:hover:bg-dark-border hover:text-text-dark dark:hover:text-dark-text-primary'
               }`}
             aria-label={`Nav item ${index + 1}`}
           >
