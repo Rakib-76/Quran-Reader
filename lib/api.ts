@@ -43,18 +43,20 @@ export interface MergedSurahData {
   mergedAyahs: MergedAyah[];
 }
 
+// Get all surahs
 export async function getSurahs(): Promise<SurahMeta[]> {
   const res = await fetch('https://api.alquran.cloud/v1/surah');
   const json = await res.json();
   return json.data;
 }
-
+// Get surah by id in arabic
 export async function getArabicSurah(id: number): Promise<SurahData> {
   const res = await fetch(`https://api.alquran.cloud/v1/surah/${id}`);
   const json = await res.json();
   return json.data;
 }
 
+// Get surah by id in translation
 export async function getTranslationSurah(id: number): Promise<SurahData> {
   // Using Sahih International translation
   const res = await fetch(`https://api.alquran.cloud/v1/surah/${id}/en.sahih`);
