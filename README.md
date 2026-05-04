@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quran Reader
 
-## Getting Started
+A beautiful, modern, and highly responsive Quran reading application inspired by QuranMazid. Built with performance and user experience in mind, it provides seamless per-verse audio playback, customizable reading settings, and a fully functional mobile layout.
 
-First, run the development server:
+## 🚀 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[**View Live Demo Here**](#) *(Add your Vercel or live hosting link here)*
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Read & Listen**: Read the Quran with Arabic text and English translations, and listen to per-verse audio recitations (Mishary Rashid Alafasy).
+- **Customizable Reading Experience**:
+  - Toggle between Light and Dark themes.
+  - Adjust Arabic font size and Translation font size independently.
+  - Switch between beautiful Arabic font faces (Amiri & Scheherazade New).
+- **Real-time Search**: Instantly filter and search through Surahs.
+- **Persistent Settings**: All your reading preferences are automatically saved locally and restored on your next visit.
+- **Fully Responsive**: Optimized for both Desktop (multi-panel view) and Mobile devices (interactive drawer and touch-friendly design).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Tech Stack
 
-## Learn More
+This project is built using the following modern web technologies:
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/) (with persistent local storage)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Data & Audio API**: [AlQuran Cloud API](https://alquran.cloud/api)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To get a local copy up and running, follow these simple steps:
 
-## Deploy on Vercel
+### Prerequisites
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Node.js (v18 or higher)
+- npm or yarn
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Rakib-76/Quran-Reader.git
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd Quran-Reader
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Rakib-76/Quran-Reader/issues).
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
