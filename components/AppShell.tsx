@@ -23,11 +23,11 @@ export default function AppShell() {
   // Prevent hydration mismatch hiding main node temporarily isn't strictly needed for tailwind classes 
   // but let's map the dark root transition
   return (
-    <div className="flex flex-col md:flex-row h-full w-full bg-background dark:bg-dark-bg selection:bg-primary-green/20 transition-colors duration-300">
-      
+    <div className="flex-1 flex flex-col md:flex-row h-full w-full min-h-0 bg-background dark:bg-dark-bg selection:bg-primary-green/20 transition-colors duration-300">
+
       {/* Mobile Top Header (Visible only on mobile) */}
       <div className="md:hidden h-[64px] border-b border-border-soft dark:border-dark-border bg-white dark:bg-dark-sidebar flex items-center px-5 shrink-0 shadow-sm z-30 transition-colors duration-300">
-        <button 
+        <button
           onClick={() => setIsMobileMenuOpen(true)}
           className="p-2 -ml-2 rounded-xl text-text-dark dark:text-dark-text-primary hover:bg-gray-100 dark:hover:bg-dark-border transition-colors duration-300"
         >
@@ -48,18 +48,18 @@ export default function AppShell() {
 
       {/* Surah Sidebar (Slide drawer on mobile, static on md+) */}
       {isMobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-[#00000020] backdrop-blur-[2px] z-40 md:hidden transition-opacity"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
-      
-      <div className={`fixed inset-y-0 left-0 z-50 transform pointer-events-auto transition-transform duration-400 cubic-bezier(0.16, 1, 0.3, 1) md:relative md:translate-x-0 md:flex ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+
+      <div className={`fixed inset-y-0 left-0 z-50 transform transition-transform duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] md:relative md:translate-x-0 md:pointer-events-auto md:flex ${isMobileMenuOpen ? 'translate-x-0 pointer-events-auto' : '-translate-x-full pointer-events-none'}`}>
         <SurahSidebar onClose={() => setIsMobileMenuOpen(false)} />
       </div>
 
       {/* Reader Panel - Flex 1 */}
-      <div className="flex-1 flex min-w-0 bg-white dark:bg-dark-panel transition-colors duration-300">
+      <div className="flex-1 flex min-w-0 min-h-0 bg-white dark:bg-dark-panel transition-colors duration-300">
         <ReaderPanel />
       </div>
 
@@ -67,7 +67,7 @@ export default function AppShell() {
       <div className="hidden xl:flex">
         <SettingsPanel />
       </div>
-      
+
     </div>
   );
 }

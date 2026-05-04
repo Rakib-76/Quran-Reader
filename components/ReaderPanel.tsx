@@ -76,7 +76,7 @@ export default function ReaderPanel() {
   const fontFamilyVar = arabicFont === 'Amiri' ? 'var(--font-amiri)' : 'var(--font-scheherazade)';
 
   return (
-    <div className="flex-1 flex flex-col h-full bg-white dark:bg-dark-panel overflow-hidden shadow-[-4px_0_24px_-4px_rgba(0,0,0,0.02)] z-10 relative transition-colors duration-300">
+    <div className="flex-1 flex flex-col h-full min-h-0 bg-white dark:bg-dark-panel overflow-hidden shadow-[-4px_0_24px_-4px_rgba(0,0,0,0.02)] z-10 relative transition-colors duration-300">
 
       {/* Centered Header Area */}
       <div className="py-6 md:py-10 border-b border-border-soft dark:border-dark-border flex flex-col items-center justify-center shrink-0 bg-white dark:bg-dark-panel relative transition-colors duration-300">
@@ -97,7 +97,7 @@ export default function ReaderPanel() {
       </div>
 
       {/* Main Ayah Reading Space */}
-      <div className="flex-1 overflow-y-auto px-5 md:px-10 lg:px-16 py-6 md:py-10 scroll-smooth">
+      <div className="flex-1 overflow-y-auto min-h-0 overscroll-contain touch-pan-y px-5 md:px-10 lg:px-16 pt-6 pb-24 md:pt-10 md:pb-32" style={{ WebkitOverflowScrolling: 'touch' }}>
         <div className="max-w-4xl mx-auto space-y-10 md:space-y-12">
 
           {data.mergedAyahs.map((ayah, index) => {

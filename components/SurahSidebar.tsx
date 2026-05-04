@@ -59,7 +59,7 @@ export default function SurahSidebar({ onClose }: { onClose?: () => void }) {
       </div>
 
       {/* Surah List Cards */}
-      <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3">
+      <div className="flex-1 overflow-y-auto min-h-0 px-4 py-4 space-y-3">
         {filteredSurahs.map((surah) => {
           const isActive = activeSurahId === surah.number;
           return (

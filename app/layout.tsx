@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`h-screen w-screen overflow-hidden bg-background text-text-dark flex ${amiri.variable} ${scheherazade.variable}`}>
+      <body className={`h-[100dvh] w-screen overflow-hidden bg-background text-text-dark flex ${amiri.variable} ${scheherazade.variable}`}>
         {children}
       </body>
     </html>
