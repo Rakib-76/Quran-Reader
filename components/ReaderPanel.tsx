@@ -10,7 +10,7 @@ export default function ReaderPanel() {
   const { arabicFont, arabicFontSize, translationFontSize, theme, toggleTheme } = useSettingsStore();
   const params = useParams();
   const activeSurahId = params.id ? Number(params.id) : 1;
-  
+
   const [data, setData] = useState<MergedSurahData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
@@ -50,7 +50,7 @@ export default function ReaderPanel() {
       audioRef.current.currentTime = 0;
     }
 
-    // Initialize new audio stream (Alafasy by default)
+    // Initialize new audio stream 
     const url = `https://cdn.islamic.network/quran/audio/128/ar.alafasy/${ayahGlobalNumber}.mp3`;
     const audio = new Audio(url);
     audioRef.current = audio;
@@ -77,12 +77,12 @@ export default function ReaderPanel() {
 
   return (
     <div className="flex-1 flex flex-col h-full bg-white dark:bg-dark-panel overflow-hidden shadow-[-4px_0_24px_-4px_rgba(0,0,0,0.02)] z-10 relative transition-colors duration-300">
-      
+
       {/* Centered Header Area */}
       <div className="py-6 md:py-10 border-b border-border-soft dark:border-dark-border flex flex-col items-center justify-center shrink-0 bg-white dark:bg-dark-panel relative transition-colors duration-300">
-        
+
         {/* Toggle Theme Button Top Right */}
-        <button 
+        <button
           onClick={toggleTheme}
           className="absolute top-6 right-6 md:top-8 md:right-8 p-2 rounded-full text-text-muted hover:text-primary-green hover:bg-primary-green/10 transition-colors"
         >
@@ -99,24 +99,24 @@ export default function ReaderPanel() {
       {/* Main Ayah Reading Space */}
       <div className="flex-1 overflow-y-auto px-5 md:px-10 lg:px-16 py-6 md:py-10 scroll-smooth">
         <div className="max-w-4xl mx-auto space-y-10 md:space-y-12">
-          
+
           {data.mergedAyahs.map((ayah, index) => {
             const isPlaying = playingAyah === ayah.globalNumber;
-            
+
             return (
               <React.Fragment key={ayah.numberInSurah}>
                 <div className={`flex flex-col md:flex-row transition-all duration-500 ease-out p-5 md:p-6 -mx-2 md:-mx-6 rounded-[28px] ${isPlaying ? 'bg-primary-green/[0.04] shadow-[inset_0_0_0_1px_rgba(76,140,63,0.12)]' : 'group hover:bg-gray-50/60 dark:hover:bg-dark-card/50'}`}>
-                  
+
                   {/* Left Vertical Action Rail */}
                   <div className="flex flex-row md:flex-col items-center justify-between md:justify-start gap-4 md:gap-5 mb-5 md:mb-0 md:mr-8 shrink-0 md:py-2 w-full md:w-10">
                     <span className="text-[13px] font-bold text-primary-green bg-primary-green/10 px-3.5 py-1.5 md:px-0 md:w-full text-center rounded-lg shadow-sm">
                       {data.meta.number}:{ayah.numberInSurah}
                     </span>
-                    
+
                     <div className={`flex flex-row md:flex-col gap-6 md:gap-4 transition-all duration-300 ${isPlaying ? 'opacity-100 translate-y-0' : 'opacity-100 md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0'}`}>
-                      <button 
+                      <button
                         onClick={() => togglePlay(ayah.globalNumber)}
-                        className={`transition-all duration-300 ${isPlaying ? 'text-primary-green scale-110 drop-shadow-sm' : 'text-text-muted hover:text-primary-green hover:scale-110 dark:hover:text-primary-green'}`} 
+                        className={`transition-all duration-300 ${isPlaying ? 'text-primary-green scale-110 drop-shadow-sm' : 'text-text-muted hover:text-primary-green hover:scale-110 dark:hover:text-primary-green'}`}
                         aria-label="Play verse"
                       >
                         {isPlaying ? (
@@ -138,10 +138,10 @@ export default function ReaderPanel() {
                   <div className="flex-1 min-w-0">
                     {/* Large Right-Aligned Arabic Text */}
                     <div className="text-right pb-8 pt-1">
-                      <p 
+                      <p
                         className="font-arabic font-medium antialiased text-text-dark dark:text-dark-text-primary optimize-legibility transition-colors"
-                        style={{ 
-                          fontFamily: fontFamilyVar, 
+                        style={{
+                          fontFamily: fontFamilyVar,
                           fontSize: `${arabicFontSize}px`,
                           lineHeight: '2.4'
                         }}
@@ -149,13 +149,13 @@ export default function ReaderPanel() {
                         {ayah.arabicText}
                       </p>
                     </div>
-                    
+
                     {/* English Translation */}
                     <div className="text-left border-l-[3px] border-border-soft dark:border-dark-border pl-5 py-1 transition-colors">
                       <span className="text-[11px] font-bold uppercase tracking-widest text-[#9BA89B] dark:text-dark-text-secondary/80 mb-2.5 block">
                         Sahih International
                       </span>
-                      <p 
+                      <p
                         className="text-text-dark/90 dark:text-dark-text-secondary leading-relaxed font-sans transition-colors"
                         style={{
                           fontSize: `${translationFontSize}px`
@@ -175,7 +175,7 @@ export default function ReaderPanel() {
               </React.Fragment>
             );
           })}
-          
+
         </div>
       </div>
 
