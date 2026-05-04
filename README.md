@@ -57,10 +57,7 @@ To get a local copy up and running, follow these simple steps:
    ```
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Rakib-76/Quran-Reader/issues).
 
 ## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the 
