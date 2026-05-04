@@ -4,7 +4,7 @@ A beautiful, modern, and highly responsive Quran reading application inspired by
 
 ## 🚀 Live Demo
 
-[**View Live Demo Here**](#) *(Add your Vercel or live hosting link here)*
+[https://quran-reader-delta.vercel.app/surah/1](#) *(Add your Vercel or live hosting link here)*
 
 ## ✨ Features
 
